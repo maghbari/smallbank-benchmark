@@ -1,4 +1,4 @@
-module fabric/scenario/smallbank/go
+module github.com/maghbari/smallbank-benchmark/contracts/smallbank
 
 go 1.17
 
