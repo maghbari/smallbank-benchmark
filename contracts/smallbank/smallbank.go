@@ -270,7 +270,7 @@ func saveAccount(stub shim.ChaincodeStubInterface, account *Account) error {
 
 func deleteAccount(stub shim.ChaincodeStubInterface, accountKey string) error {
 	
-	err = stub.DelState(accountKey)
+	err := stub.DelState(accountKey)
 	
 	if err != nil {
 		return shim.Error("Failed to delete state:" + err.Error())
