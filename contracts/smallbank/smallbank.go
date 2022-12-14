@@ -273,7 +273,7 @@ func deleteAccount(stub shim.ChaincodeStubInterface, accountKey string) error {
 	err := stub.DelState(accountKey)
 	
 	if err != nil {
-		return shim.Error("Failed to delete state:" + err.Error())
+		return systemerror(err.Error())
 	}
 	
 	return shim.Success(nil)
