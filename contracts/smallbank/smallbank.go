@@ -59,6 +59,8 @@ func (t *SmallbankChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Respons
 		return t.Amalgamate(stub, args)
 	case "query":
 		return t.Query(stub, args)
+	case "delete_account":
+		return t.DeleteAccount(stub, args)
 	default:
 		return errormsg(ERROR_UNKNOWN_FUNC + ": " +function)
 	}
