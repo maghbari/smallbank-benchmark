@@ -268,7 +268,7 @@ func saveAccount(stub shim.ChaincodeStubInterface, account *Account) error {
 	return stub.PutState(key, accountBytes)
 }
 
-func deleteAccount(stub shim.ChaincodeStubInterface, accountKey string) error {
+func deleteAccount(stub shim.ChaincodeStubInterface, accountKey string) pb.Response {
 	
 	err := stub.DelState(accountKey)
 	
