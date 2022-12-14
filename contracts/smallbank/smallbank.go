@@ -273,7 +273,7 @@ func (t *SmallbankChaincode) DeleteAccount(stub shim.ChaincodeStubInterface, arg
 	err := stub.DelState(accountKey)
 	
 	if err != nil {
-		return errormsg('Account not Found')
+		return errormsg("Account not Found")
 	}
 	
 	return shim.Success(nil)
