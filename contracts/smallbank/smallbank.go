@@ -77,11 +77,11 @@ func (t *SmallbankChaincode) CreateAccount(stub shim.ChaincodeStubInterface, arg
 		return errormsg(ERROR_WRONG_ARGS + " create_account")
 	}
 
-	key := accountKey(args[0])
-	data,err := stub.GetState(key)
-	if data != nil {
-		return errormsg("Can not create duplicated account")
-	}
+	//key := accountKey(args[0])
+	//data,err := stub.GetState(key)
+	//if data != nil {
+	//	return errormsg("Can not create duplicated account")
+	//}
 
 	checking, errcheck := strconv.Atoi(args[2])
 	if errcheck != nil {
@@ -97,7 +97,7 @@ func (t *SmallbankChaincode) CreateAccount(stub shim.ChaincodeStubInterface, arg
 		CustomName: args[1],
 		SavingsBalance: saving,
 		CheckingBalance: checking }
-	err = saveAccount(stub, account)
+	err := saveAccount(stub, account)
 	if err != nil {
 		return systemerror(err.Error())
 	}

@@ -14,8 +14,8 @@ RUN apk add --no-cache \
 	make \
 	musl-dev
 
-ADD . $GOPATH/src/github.com/maghbari/smallbank-benchmark/contracts/smallbank
-WORKDIR $GOPATH/src/github.com/maghbari/smallbank-benchmark/contracts/smallbank
+ADD . $GOPATH/src/maghbari/smallbank-benchmark/contracts/smallbank
+WORKDIR $GOPATH/src/maghbari/smallbank-benchmark/contracts/smallbank
 
 RUN go install ./...
 
